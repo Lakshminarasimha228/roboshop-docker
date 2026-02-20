@@ -19,8 +19,8 @@ services:
     image: lakshminarasimha228/user:v1
     container_name: user
     depends_on:
-    - mongodb
     - redis
+    - mongodb
   cart:
     image: lakshminarasimha228/cart:v1
     container_name: cart
@@ -50,9 +50,9 @@ services:
         CART_PORT: 8080
         USER_HOST: user
         USER_PORT: 8080
-        AMPQ_HOST: rabbitmq
-        AMPQ_USER: roboshop
-        AMPQ_PASS: roboshop123
+        AMQP_HOST: rabbitmq
+        AMQP_USER: roboshop
+        AMQP_PASS: roboshop123
       depends_on:
       - cart
       - user
